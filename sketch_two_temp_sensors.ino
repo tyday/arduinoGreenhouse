@@ -70,13 +70,20 @@ void loop() {
   float hi = dht.computeHeatIndex(f, h);
 
     // Print out reading from photocell
-    Serial.print("{\"s0\":{\"b\":");
+    Serial.print("{\"light\":");
     Serial.print(photocellReading);
-    Serial.print("}, ");
+    Serial.print(", \"temp1\":");
+    Serial.print(t);
+    Serial.print(", \"temp2\":");
+    Serial.print(t2);
+    Serial.print(", \"RH1\":");
+    Serial.print(h);
+    Serial.print(", \"RH2\":");
+    Serial.print(h2);
     
-    Serial.print("\"s1\":");
-    serialPrintSensor(t, h);
-    Serial.print(",\"s2\":");
-    serialPrintSensor(t2,h2);
+//    Serial.print("\"s1\":");
+//    serialPrintSensor(t, h);
+//    Serial.print(",\"s2\":");
+//    serialPrintSensor(t2,h2);
     Serial.println("}");
 }
